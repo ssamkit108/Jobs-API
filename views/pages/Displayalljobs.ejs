@@ -1,0 +1,103 @@
+<head>
+    <title>Get Job</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+  /* Basic styling */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+body {
+  font-family: sans-serif;
+}
+nav {
+  background: #222;
+  margin: 0;
+
+}
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+}
+.toggle a {
+  font-size: 20px;
+  text-align: center;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+.navbar .logo a:hover {
+  text-decoration: none;
+}
+.navbar li {
+  font-size: 16px;
+  padding: 0 5px;
+  white-space: nowrap;
+  text-align: center;
+
+}
+
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+</style>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: white;">
+  <a class="navbar-brand">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/getJobs292"> Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>  </a>
+
+  <div>
+    <!-- Right -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/add">Add New Job <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container"> 
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <h1 style="text-align: center;"> List of Jobs</h1>
+
+      <table class="table">
+        <thead class="thead-light" style="text-align: center;">
+          <tr>
+            <th>Job Name</th>
+            <th>Part Id</th>
+            <th>Quantity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody style="text-align: center;">
+          <%jobs.forEach(function(job){ %>
+            <tr>
+              <td><%= job.jobName292 %></td>
+              <td><%= job.partId292 %></td>
+              <td><%= job.qty292 %></td>
+              <td>
+                  <a href="/Jobs/updatejob292/<%= job.jobName292 %>/<%= job.partId292 %>" class="btn btn-primary"> Edit</a>
+                  <form class="d-inline" action="/Jobs/delete292/<%= job.jobName292 %>" method="POST">
+                  <input type="submit" value="Delete Job" class="btn btn-primary">
+                  </form>
+              </td>
+            </tr> 
+          <%}) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
