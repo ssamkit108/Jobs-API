@@ -38,7 +38,8 @@ module.exports = {
 
   delete: function (req, res) {
     Jobs.destroy({
-      jobName292: req.params.jobName292
+      jobName292: req.params.jobName292,
+      partId292: req.params.partId292
     }).exec((error) => {
       if (error) {
         res.send({
