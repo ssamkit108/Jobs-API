@@ -70,12 +70,12 @@ module.exports = {
     });
   },
   update: function (req, res) {
-    var jobName292 = req.body.jobName292;
-    var partId292 = req.body.partID292;
+    var jobName292 = req.params.jobName292;
+    var partId292 = req.params.partId292;
     var qty292 = req.body.qty292;
-
     Jobs.update({
-      jobName292: jobName292
+      jobName292: jobName292,
+      partId292:partId292,
     }, {
       qty292: qty292
     }).exec((error) => {

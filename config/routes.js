@@ -6,5 +6,5 @@ module.exports.routes = {
   '/add': { view: 'pages/addnewjob' },
   'POST /Jobs/Post':'LabController.add',
   'GET /getJobs292':'LabController.get',
-  '/Jobs/putJob292/:jobName292':'LabController.update'
+  '/Jobs/putJob292/:jobName292/:partId292':'LabController.update'
 };
